@@ -1,0 +1,37 @@
+---
+layout: default
+---
+
+{% capture tags %}
+  {% for tag in site.tags %}
+    {{ tag[0] | replace: ' ', '-' }}
+  {% endfor %}
+{% endcapture %}
+{% assign sortedtags = tags | split:' ' | sort %}
+
+<div class="col-md-8">
+
+{% for tag in sortedtags %}
+  <h4 id="{{ tag }}">{{ tag }}</h4>
+  <table class="table table-condensed">
+    <thead>
+    <tr>
+      <th>Date</th>
+      <th>Post</th>
+    </tr>
+    </thead>
+    <tbody>
+  {% for post in site.tags[tag] %}
+    <tr>
+      <td>{{ post.date | date_to_string }}</td>
+      <td><a href="{{ post.url }}">{{ post.title }}</a></td>
+    </tr>
+  {% endfor %}
+    </tbody>
+  </table>
+ 
+{% endfor %}
+
+</div>
+
+{% include side.html %}

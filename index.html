@@ -2,17 +2,19 @@
 layout: default
 ---
 
-<div class="posts">
+<div class="col-md-8">
   {% for post in site.posts %}
-    <article class="post">
-
-      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
-
-      <div class="entry">
-        {{ post.excerpt }}
-      </div>
-
-      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
-    </article>
+        
+    <h4>
+        <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
+    </h4>
+    <p>
+        <span class="fa fa-clock-o"></span> Posted on {{ post.date | date: "%B %e, %Y" }} in 
+        {% include tags.html wrap="false" seperator="|" %}
+    </p>
+    {{ post.excerpt }}
+        
   {% endfor %}
 </div>
+
+ {% include side.html %}
