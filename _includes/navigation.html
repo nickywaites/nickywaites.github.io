@@ -13,16 +13,16 @@
 			<ul class="nav navbar-nav">
 				<li><a href="http://www.nickywaites.com">Home</a></li>
 				{% if page.url == "/about/" %}
-					<li><a href="{{ site.baseurl }}/">Blog</a></li>
 					<li class="active"><a href="/about/">About</a></li>
+					<li><a href="{{ site.baseurl }}/">Blog</a></li>
 					<li><a href="/tags/">Tags</a></li>                    
 				{% elsif page.url == "/tags/index.html" %}
-					<li><a href="{{ site.baseurl }}/">Blog</a></li>
 					<li><a href="/about/">About</a></li>
+					<li><a href="{{ site.baseurl }}/">Blog</a></li>
 					<li class="active"><a href="/tags/">Tags</a></li>  
 				{% else %}
-					<li class="active"><a href="{{ site.baseurl }}/">Blog</a></li>
 					<li><a href="/about/">About</a></li>
+					<li class="active"><a href="{{ site.baseurl }}/">Blog</a></li>
 					<li><a href="/tags/">Tags</a></li>
 				{% endif %}
 			</ul>
